@@ -8,7 +8,7 @@ interface Product {
 }
 interface Props {
   productList: Product[];
-  onDelete: (id: number) => void;
+  onDelete: (id: Product) => void;
 }
 
 const CartPage = ({ productList, onDelete }: Props) => {
@@ -61,7 +61,7 @@ const CartPage = ({ productList, onDelete }: Props) => {
                 <td>
                   <button
                     className="bg-rose-50 text-rose-500 px-2 py-1 border-2 border-solid border-rose-500 rounded-md text-xs hover:bg-rose-500 hover:text-white duration-100 max-xs:text-[10px] max-xs:p-0.5"
-                    onClick={() => onDelete(item.id)}
+                    onClick={() => onDelete(item)}
                   >
                     Delete
                   </button>

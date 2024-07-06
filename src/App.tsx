@@ -63,8 +63,9 @@ function App() {
     }
   };
   // handle function which delete item from table
-  const onDelete = (id: number) => {
-    setProductList(productList.filter((item) => item.id !== id));
+  const onDelete = (itemDeleted: Product) => {
+    setCounterItems(counterItems - itemDeleted.quantity);
+    setProductList(productList.filter((item) => item.id !== itemDeleted.id));
   };
   return (
     <>
